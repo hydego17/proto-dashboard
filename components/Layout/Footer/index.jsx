@@ -1,12 +1,11 @@
 import { Box, Flex, Heading, Text, Container } from "@chakra-ui/react";
-import Link from "next/link";
 
 export default function Footer() {
   return (
     <Box as="footer" fontSize="sm" w="100%" borderTop="1px solid #ededed">
       <Flex
         px={6}
-        pt={2}
+        pt={[6, 2]}
         direction={["column-reverse", "row"]}
         justify="space-between"
         align={["flex-start", "center"]}

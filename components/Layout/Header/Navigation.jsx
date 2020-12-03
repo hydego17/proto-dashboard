@@ -16,9 +16,9 @@ export default function Navigation() {
     <NavStyled>
       <Avatar
         mx={2}
-        name="Dan Abrahmov"
+        name="mathroid"
         size="md"
-        src="https://bit.ly/dan-abramov"
+        src="https://avatars2.githubusercontent.com/u/3748658?v=4"
       />
       <Menu>
         <>

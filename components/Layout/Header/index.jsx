@@ -55,6 +55,7 @@ const HeaderStyled = styled.header`
   z-index: 2;
   background: white;
   background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 5px -6px rgba(0, 0, 0, 0.1);
 
   .logo {
     display: inline-block;

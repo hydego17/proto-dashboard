@@ -1,11 +1,13 @@
 import useSWR from "swr";
 
-export const useGetPosts = () => {
+const url = `https://covid19.mathdro.id/api/`;
+
+export const useGetData = () => {
   const { data, error } = useSWR(`${url}`, fetcher);
   return {
     data,
     error,
-    isLoading: !error && !data,
+    loading: !error && !data,
   };
 };
 

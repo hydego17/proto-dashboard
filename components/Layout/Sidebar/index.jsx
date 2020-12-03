@@ -1,23 +1,55 @@
-import { Box, Heading, Link } from "@chakra-ui/react";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
+  Heading,
+  Link,
+  Text,
+} from "@chakra-ui/react";
+import { menus } from "./sidebarMenus";
+const Border = `1px solid #ededed`;
 
 export default function Sidebar() {
   return (
     <Box
       as="aside"
-      bg="gray.100"
-      maxW="200px"
-      h="100vh"
-      borderRight="1px solid #ededed"
+      width={250}
+      py={6}
+      bg="white"
+      minH="100vh"
+      borderRight={Border}
     >
-      <Box w="100%" py={4} px={6}>
-        <Link>Home</Link>
-      </Box>
-      <Box w="100%" py={4} px={6}>
-        <Link>Learning</Link>
-      </Box>
-      <Box w="100%" py={4} px={6}>
-        <Link>Sidebar</Link>
-      </Box>
+      <Accordion defaultIndex={[0]} allowMultiple>
+        {menus.map((menu, index) => (
+          <AccordionItem key={index}>
+            <AccordionButton py={3}>
+              <Box flex="1" textAlign="left">
+                {menu.tag}
+              </Box>
+
+              {menu.links.length > 0 && <AccordionIcon />}
+            </AccordionButton>
+
+            {menu.links.length > 0 &&
+              menu.links.map((link, index) => (
+                <a key={index} href="#">
+                  <AccordionPanel
+                    _hover={{
+                      bg: "gray.100",
+                    }}
+                    py={3}
+                    pl={8}
+                  >
+                    {link}
+                  </AccordionPanel>
+                </a>
+              ))}
+          </AccordionItem>
+        ))}
+      </Accordion>
     </Box>
   );
 }

@@ -12,7 +12,7 @@ const GlobalStyles = () => (
           -webkit-font-smoothing: antialiased;
           text-rendering: optimizeLegibility;
           backface-visibility: hidden;
-          font-family: "Public Sans", sans-serif !important;
+          font-family: "Inter", sans-serif !important;
         }
 
         html,
@@ -32,6 +32,12 @@ const GlobalStyles = () => (
         img {
           object-fit: cover;
           width: 100%;
+        }
+
+        aside {
+          @media (max-width: 600px) {
+            display: none;
+          }
         }
       `}
     />
