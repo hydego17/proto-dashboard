@@ -3,7 +3,7 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-import { useGetDailyData } from "hooks";
+import { useGetDailyData } from "hooks/Global";
 import { chartOptions } from "./chartOptions";
 
 export default function DailyChart({ dailySummary }) {

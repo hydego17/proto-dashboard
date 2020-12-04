@@ -1,22 +1,23 @@
 import Head from "next/head";
-import { Heading, Spinner, Wrap } from "@chakra-ui/react";
+import { Box, Divider, Heading, Spinner, Text, Wrap } from "@chakra-ui/react";
 
-import { useGetData } from "hooks";
+import { useGlobalData } from "hooks/Global";
+
 import SummaryCard from "components/Card/SummaryCard";
 import DailyChart from "components/Card/DailyChart";
 
 export default function Home() {
   // Fetch data from API using SWR custom Hook
-  const { data, error, loading } = useGetData();
+
+  const { data, error, loading } = useGlobalData();
 
   return (
     <>
       <Head>
-        <title> Dashboard </title>
+        <title> Global </title>
       </Head>
-      <Heading size="md" size="lg" px={2} pb={4}>
-        Dashboard
-      </Heading>
+
+      {/* Global */}
 
       {loading && <Spinner />}
 

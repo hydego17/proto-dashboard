@@ -23,6 +23,7 @@ export default function DrawerMenu() {
       <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay>
           <DrawerContent>
+            <DrawerCloseButton />
             <DrawerHeader borderBottomWidth="1px">Codemi</DrawerHeader>
 
             {/* Drawer body */}

@@ -2,7 +2,7 @@ import useSWR from "swr";
 
 const URL = `https://covid19.mathdro.id/api/`;
 
-export const useGetData = () => {
+export const useGlobalData = () => {
   const { data, error } = useSWR(`${URL}`, fetcher);
   return {
     data,
