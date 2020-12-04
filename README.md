@@ -6,7 +6,7 @@ This project was built using:
 
 - [**Next.js**](https://nextjs.org/) (React)
 - [**SWR**](https://swr.vercel.app/) for data fetching
-- [**Chakra-UI**](https://chakra-ui.com/) (CSS Framework) and [**Emotion**](https://emotion.sh/) (CSS in JS) for styling
+- [**Chakra-UI**](https://chakra-ui.com/) and [**Emotion**](https://emotion.sh/) for styling
 - [**Apexchart**](https://apexcharts.com/) for data visualisation
 
 The data was fetched from https://covid19.mathdro.id/api (Global Data) and https://apicovid19indonesia-v2.vercel.app/api/ (Indonesia) .
