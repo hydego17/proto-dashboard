@@ -14,7 +14,7 @@ export const useIndonesiaData = () => {
 
 export const useProvinsiData = () => {
   const { data, error } = useSWR(
-    `https://apicovid19indonesia-v2.vercel.app/api/indonesia/provinsi`,
+    `https://apicovid19indonesia-v2.vercel.app/api/indonesia/provinsi/more`,
     fetcher
   );
   return {

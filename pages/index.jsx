@@ -17,11 +17,8 @@ export default function Home() {
         <title> Global </title>
       </Head>
 
-      {/* Global */}
-
       {loading && <Spinner />}
 
-      {/* Display data into separate components */}
       {data && (
         <Wrap w="100%">
           <DailyChart {...data} />

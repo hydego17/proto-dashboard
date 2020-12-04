@@ -2,7 +2,6 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,

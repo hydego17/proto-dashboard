@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { Box, Button, Divider, Flex, Heading } from "@chakra-ui/react";
 
 import { useViewPort } from "providers/ContextWrapper";
@@ -10,6 +11,22 @@ import Link from "next/link";
 export default function Layout({ children }) {
   // Only display sidebar when vieport > 1023 px
   const { mQuery } = useViewPort();
+
+  const router = useRouter();
+
+  const links = [
+    {
+      title: "Global Data",
+      to: "/",
+      path: router.pathname === "/",
+    },
+    {
+      title: "Indonesia",
+      to: "/indonesia",
+      path: router.pathname === "/indonesia",
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -23,13 +40,13 @@ export default function Layout({ children }) {
           </Heading>
 
           <Flex pt={4}>
-            <Link href="/">
-              <Button mr={2}>Global Data</Button>
-            </Link>
-
-            <Link href="/indonesia">
-              <Button>Indonesia</Button>
-            </Link>
+            {links.map((link, index) => (
+              <Link key={index} href={link.to}>
+                <Button isActive={link.path} mr={2}>
+                  {link.title}
+                </Button>
+              </Link>
+            ))}
           </Flex>
           <Divider my={2} />
 

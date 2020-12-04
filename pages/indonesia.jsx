@@ -1,10 +1,11 @@
-import { Box, Divider, Heading, Spinner, Text, Wrap } from "@chakra-ui/react";
+import { Wrap } from "@chakra-ui/react";
 import IndoStat from "components/Card/IndoStat";
 import ProvinsiStat from "components/Card/ProvinsiStat";
 import { useIndonesiaData } from "hooks/Indonesia";
 import Head from "next/head";
 
 export default function IndonesiaPage() {
+  // Fetch data from API using SWR custom Hook
   const { indoData, loading } = useIndonesiaData();
   return (
     <>
@@ -12,7 +13,7 @@ export default function IndonesiaPage() {
         <title> Indonesia </title>
       </Head>
 
-      <Wrap w="100%">
+      <Wrap w="full">
         {indoData && (
           <>
             <IndoStat data={indoData} />
