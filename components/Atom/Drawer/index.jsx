@@ -10,23 +10,24 @@ import {
   useDisclosure,
   Button,
 } from "@chakra-ui/react";
+import AccordionMenu from "../Accordion";
 
 export default function DrawerMenu() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <Button ml={2} onClick={onOpen}>
+      <Button ml={2} py="1.3rem" onClick={onOpen}>
         <HamburgerIcon />
       </Button>
       <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay>
           <DrawerContent>
-            <DrawerHeader borderBottomWidth="1px">Basic Drawer</DrawerHeader>
-            <DrawerBody>
-              <p>Some contents...</p>
-              <p>Some contents...</p>
-              <p>Some contents...</p>
+            <DrawerHeader borderBottomWidth="1px">Codemi</DrawerHeader>
+
+            {/* Drawer body */}
+            <DrawerBody p={0}>
+              <AccordionMenu />
             </DrawerBody>
           </DrawerContent>
         </DrawerOverlay>

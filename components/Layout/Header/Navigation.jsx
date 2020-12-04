@@ -1,29 +1,17 @@
 import styled from "@emotion/styled";
 
-import Drawer from "components/Drawer";
-import Menus from "components/Menus";
-import { useEffect, useState } from "react";
+import { useViewPort } from "providers/ContextWrapper";
+
+import Drawer from "components/Atom/Drawer";
+import Menus from "components/Atom/Menus";
 
 export default function Navigation() {
-  // Set viewport (max: 600px)
-  const [mQuery, setMQuery] = useState({});
-
-  useEffect(() => {
-    const isLarge = {
-      matches: window.innerWidth < 600 ? true : false,
-    };
-    setMQuery(isLarge);
-
-    let mediaQuery = window.matchMedia(`(max-width: 600px)`);
-    mediaQuery.addEventListener("change", setMQuery);
-
-    return () => mediaQuery.removeEventListener("change", setMQuery);
-  }, []);
+  const { mQuery } = useViewPort();
   return (
     <NavStyled>
       <Menus />
 
-      {mQuery.matches && <Drawer />}
+      {!mQuery.matches && <Drawer />}
     </NavStyled>
   );
 }
