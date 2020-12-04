@@ -1,6 +1,6 @@
 # Admin Dashboard
 
-[**DEMO**](https://github-dev.vercel.app/)
+[**DEMO**](https://proto-dashboard.hydego17.vercel.app/)
 
 This project was built using:
 
