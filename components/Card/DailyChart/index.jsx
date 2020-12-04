@@ -4,32 +4,12 @@ import dynamic from "next/dynamic";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 import { useGetDailyData } from "hooks";
-import { ChartOptions } from "./chartOptions";
+import { chartOptions } from "./chartOptions";
 
 export default function DailyChart({ dailySummary }) {
   const { data, error, loading } = useGetDailyData(dailySummary);
 
-  const state = {
-    options: {
-      ...ChartOptions,
-      xaxis: {
-        type: "datetime",
-        categories: data?.map(({ date }) => date),
-      },
-    },
-    series: [
-      {
-        name: "Confirmed",
-        type: "column",
-        data: data?.map(({ confirmed }) => confirmed),
-      },
-      {
-        name: "Deaths",
-        type: "column",
-        data: data?.map(({ deaths }) => deaths),
-      },
-    ],
-  };
+  const chart = chartOptions(data);
 
   return (
     <Box
@@ -38,14 +18,17 @@ export default function DailyChart({ dailySummary }) {
       rounded="md"
       bg="white"
       flex={{ md: 3 }}
-      mr={2}
+      m={2}
       p={4}
     >
-      <Heading size="md">Daily Chart</Heading>
+      <Box as="header" textAlign="center">
+        <Heading size="md">Daily Chart</Heading>
+        <Text as="small"> (Last 30 Days ) </Text>
+      </Box>
 
       <Box py={4}>
         {data && (
-          <Chart options={state.options} series={state.series} height={350} />
+          <Chart options={chart.options} series={chart.series} height={360} />
         )}
       </Box>
     </Box>

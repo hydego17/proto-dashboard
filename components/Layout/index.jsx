@@ -1,7 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Sidebar from "./Sidebar";
+import Sidebar from "../Sidebar";
 
 export default function Layout({ children }) {
   return (

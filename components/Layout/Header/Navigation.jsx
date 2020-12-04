@@ -1,40 +1,29 @@
-import Link from "next/link";
-
-import { ChevronDownIcon } from "@chakra-ui/icons";
-import {
-  Avatar,
-  Button,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-} from "@chakra-ui/react";
 import styled from "@emotion/styled";
 
+import Drawer from "components/Drawer";
+import Menus from "components/Menus";
+import { useEffect, useState } from "react";
+
 export default function Navigation() {
+  // Set viewport (max: 600px)
+  const [mQuery, setMQuery] = useState({});
+
+  useEffect(() => {
+    const isLarge = {
+      matches: window.innerWidth < 600 ? true : false,
+    };
+    setMQuery(isLarge);
+
+    let mediaQuery = window.matchMedia(`(max-width: 600px)`);
+    mediaQuery.addEventListener("change", setMQuery);
+
+    return () => mediaQuery.removeEventListener("change", setMQuery);
+  }, []);
   return (
     <NavStyled>
-      <Avatar
-        mx={2}
-        name="mathroid"
-        size="md"
-        src="https://avatars2.githubusercontent.com/u/3748658?v=4"
-      />
-      <Menu>
-        <>
-          <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-            Admin
-          </MenuButton>
-          <MenuList>
-            <MenuItem>Menu 1</MenuItem>
-            <MenuItem>Menu 2</MenuItem>
-            <MenuItem>Menu 3</MenuItem>
-            <MenuItem>
-              <a href="/api/klaskita/logout">Logout</a>
-            </MenuItem>
-          </MenuList>
-        </>
-      </Menu>
+      <Menus />
+
+      {mQuery.matches && <Drawer />}
     </NavStyled>
   );
 }
@@ -43,7 +32,11 @@ const NavStyled = styled.ul`
   display: flex;
   align-items: center;
 
-  button {
+  .chakra-menu__menu-button {
+    padding: 22px 8px;
+  }
+
+  .chakra-avatar {
     margin: 0 2px;
   }
 `;

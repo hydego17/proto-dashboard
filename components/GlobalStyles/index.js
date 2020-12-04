@@ -12,9 +12,9 @@ const GlobalStyles = () => (
           -webkit-font-smoothing: antialiased;
           text-rendering: optimizeLegibility;
           backface-visibility: hidden;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-            Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-          /* font-family: "Inter", sans-serif !important; */
+          /* font-family: -apple-system, BlinkMacSystemFont, "Inter", Oxygen,
+            Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
+          font-family: "Inter", sans-serif !important;
         }
 
         html,

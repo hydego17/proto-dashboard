@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <>
-      <Heading size="md" size="lg" pb={4}>
+      <Heading size="md" size="lg" px={2} pb={4}>
         Dashboard
       </Heading>
 
@@ -18,7 +18,6 @@ export default function Home() {
       {data && (
         <Wrap w="100%">
           <DailyChart {...data} />
-
           <SummaryCard {...data} />
         </Wrap>
       )}
