@@ -24,6 +24,19 @@ export const useProvinsiData = () => {
   };
 };
 
+export const useDailyIndoData = () => {
+  const { data, error } = useSWR(
+    `https://apicovid19indonesia-v2.vercel.app/api/indonesia/harian`,
+    fetcher
+  );
+
+  return {
+    harianData: data?.slice(-14),
+    error,
+    loading: !data && !error,
+  };
+};
+
 const fetcher = async (url) => {
   const res = await fetch(url);
 
