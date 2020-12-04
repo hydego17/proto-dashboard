@@ -22,8 +22,10 @@ export default function DrawerMenu() {
       <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay>
           <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader borderBottomWidth="1px">Codemi</DrawerHeader>
+            <DrawerCloseButton mt={2} />
+            <DrawerHeader pl={4} borderBottomWidth="1px">
+              Codemi
+            </DrawerHeader>
 
             {/* Drawer body */}
             <DrawerBody p={0}>
