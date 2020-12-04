@@ -68,7 +68,7 @@ const chartOptions = (harianData) => {
       },
       labels: harianData?.map((daily) => daily.tanggal.substring(0, 10)),
 
-      colors: ["#FF4560", "#00E396", "#FEB019"],
+      colors: ["#FF4560", "#00E396", "#008FFB"],
       markers: {
         size: 0,
       },
