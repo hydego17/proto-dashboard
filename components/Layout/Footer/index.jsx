@@ -10,7 +10,7 @@ export default function Footer() {
         justify="space-between"
         align={["flex-start", "center"]}
       >
-        <Text py={4}>Copyright © 2020 Codemi</Text>
+        <Text py={4}>Copyright © 2020</Text>
 
         <Flex direction={["column", "row"]} wrap="wrap" as="ul">
           <Box py={2} pr={3} as="li">
