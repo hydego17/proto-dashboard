@@ -27,10 +27,13 @@ export default function ProvinsiStat() {
   return (
     <>
       <Box flex={{ md: 2 }} w="full">
-        <Box m={2} mb={4} px={6} py={6} bg="white">
+        <Box m={2} mb={4} px={2} py={6} bg="white">
           {/* Daily Stats */}
-          <Heading size="sm">Statistik Harian</Heading>
-          <Text as="small"> 2 Pekan terakhir </Text>
+          <Box as="header" px={4}>
+            <Heading size="sm">Statistik Harian</Heading>
+            <Text as="small"> 2 Pekan terakhir </Text>
+          </Box>
+
           <DailyIndoChart />
         </Box>
 
