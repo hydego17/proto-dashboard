@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box, Divider, Heading, Spinner, Text, Wrap } from "@chakra-ui/react";
+import { Spinner, Wrap } from "@chakra-ui/react";
 
 import { useGlobalData } from "hooks/Global";
 
@@ -9,7 +9,7 @@ import DailyChart from "components/Card/DailyChart";
 export default function Home() {
   // Fetch data from API using SWR custom Hook
 
-  const { data, error, loading } = useGlobalData();
+  const { data, loading } = useGlobalData();
 
   return (
     <>
