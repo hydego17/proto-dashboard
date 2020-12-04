@@ -13,7 +13,7 @@ export const chartOptions = (data) => {
       colors: ["#2a80d6", "#E91E63"],
       yaxis: {
         title: {
-          text: "Person (Million)",
+          text: "Case (Million)",
         },
         labels: {
           formatter: function (value) {

@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import HeaderContext from "providers/HeaderContext";
 import { Box, Flex } from "@chakra-ui/react";
 
 import { useViewPort } from "providers/ContextWrapper";
@@ -9,6 +7,7 @@ import Footer from "./Footer";
 import Sidebar from "../Atom/Sidebar";
 
 export default function Layout({ children }) {
+  // Only display sidebar when vieport > 1023 px
   const { mQuery } = useViewPort();
   return (
     <>

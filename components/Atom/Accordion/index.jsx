@@ -14,7 +14,7 @@ export default function AccordionMenu() {
     <Accordion defaultIndex={[2]} allowMultiple>
       {menus.map((menu, index) => (
         <AccordionItem key={index}>
-          <AccordionButton py={3}>
+          <AccordionButton fontWeight="bolder" color="gray.700" py={3}>
             <Box flex="1" textAlign="left">
               {menu.tag}
             </Box>

@@ -33,6 +33,10 @@ const GlobalStyles = () => (
           object-fit: cover;
           width: 100%;
         }
+
+        .apexcharts-legend-series {
+          line-height: 0 !important;
+        }
       `}
     />
   </>

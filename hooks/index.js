@@ -1,9 +1,9 @@
 import useSWR from "swr";
 
-const url = `https://covid19.mathdro.id/api/`;
+const URL = `https://covid19.mathdro.id/api/`;
 
 export const useGetData = () => {
-  const { data, error } = useSWR(`${url}`, fetcher);
+  const { data, error } = useSWR(`${URL}`, fetcher);
   return {
     data,
     error,
@@ -11,6 +11,7 @@ export const useGetData = () => {
   };
 };
 
+// this hook receive (dailySummary) url as props
 export const useGetDailyData = (url) => {
   const { data, error } = useSWR(`${url}`, fetcher);
   return {

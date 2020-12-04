@@ -2,6 +2,7 @@ import { Box, Text } from "@chakra-ui/react";
 
 import Stats from "./Stats";
 import CardContainer from "./CardContainer";
+import { formatDate } from "utils/date";
 
 export default function SummaryCard({
   confirmed,
@@ -22,7 +23,7 @@ export default function SummaryCard({
       </Box>
 
       <Text fontSize="sm" p={2}>
-        Last update: {new Date(lastUpdate).toLocaleDateString()}
+        Last update: {formatDate(lastUpdate)}
       </Text>
     </CardContainer>
   );
