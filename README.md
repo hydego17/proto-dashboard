@@ -13,7 +13,7 @@ The data was fetched from https://covid19.mathdro.id/api (Global Data) and https
 
 ## Installation
 
-### Clone this repository
+### Download or Clone this repository:
 
 ```sh
 git clone https://github.com/hydego17/github-dev.git <your_folder_name>
