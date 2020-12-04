@@ -1,7 +1,12 @@
 import { Box, Heading, Text, useColorModeValue } from "@chakra-ui/react";
 import CountUp from "react-countup";
 
-export default function SummaryCard({ confirmed, deaths, recovered }) {
+export default function SummaryCard({
+  confirmed,
+  deaths,
+  recovered,
+  lastUpdate,
+}) {
   const data = [confirmed, deaths, recovered];
   const title = ["Total Confirmed Cases", "Deaths", "Recoveries"];
 
@@ -9,6 +14,10 @@ export default function SummaryCard({ confirmed, deaths, recovered }) {
 
   return (
     <Box flex={{ md: 1 }} rounded="md" shadow="sm" bg="white" p={4}>
+      <Text fontSize="sm" p={2}>
+        Last update: {new Date(lastUpdate).toLocaleDateString()}
+      </Text>
+
       {data.map((item, index) => (
         <Box
           key={index}

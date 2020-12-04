@@ -11,6 +11,19 @@ export const useGetData = () => {
   };
 };
 
+export const useGetDailyData = (url) => {
+  const { data, error } = useSWR(`${url}`, fetcher);
+  return {
+    data: data?.slice(-30).map((daily) => ({
+      confirmed: daily.confirmed.total,
+      deaths: daily.deaths.total,
+      date: daily.reportDate,
+    })),
+    error,
+    loading: !error && !data,
+  };
+};
+
 const fetcher = async (url) => {
   const res = await fetch(url);
 

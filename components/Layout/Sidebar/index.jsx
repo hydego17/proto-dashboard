@@ -42,6 +42,7 @@ export default function Sidebar() {
                     }}
                     py={3}
                     pl={8}
+                    fontSize="15px"
                   >
                     {link}
                   </AccordionPanel>

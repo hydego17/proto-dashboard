@@ -1,7 +1,8 @@
 import { Box, Flex, Heading, Text, Spinner, Wrap } from "@chakra-ui/react";
 
 import { useGetData } from "hooks";
-import SummaryCard from "components/SummaryCard";
+import SummaryCard from "components/Card/SummaryCard";
+import DailyChart from "components/Card/DailyChart";
 
 export default function Home() {
   const { data, error, loading } = useGetData();
@@ -15,19 +16,9 @@ export default function Home() {
       {loading && <Spinner />}
 
       {data && (
-        // Summary Card
-
         <Wrap w="100%">
-          <Box
-            shadow="sm"
-            rounded="md"
-            bg="white"
-            flex={{ md: 3 }}
-            mr={2}
-            p={4}
-          >
-            <Heading size="sm">Daily Summary</Heading>
-          </Box>
+          <DailyChart {...data} />
+
           <SummaryCard {...data} />
         </Wrap>
       )}
