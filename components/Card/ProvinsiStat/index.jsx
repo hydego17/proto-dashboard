@@ -39,7 +39,7 @@ export default function ProvinsiStat() {
 
         <Box m={2} px={6} py={6} bg="white">
           {/* Province Stats */}
-          <Heading pt={6} pb={4} size="sm">
+          <Heading pb={4} size="sm">
             Data tiap Provinsi
           </Heading>
           <Select onChange={(e) => setIdx(e.target.value)}>
