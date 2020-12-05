@@ -11,15 +11,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^0.16.0",
     "@chakra-ui/icons": "^1.0.1",
     "@chakra-ui/react": "^1.0.0",
     "@emotion/core": "^10.1.0",
-    "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "apexcharts": "^3.22.2",
     "axios": "^0.21.0",
-    "emotion-theming": "^10.0.27",
     "framer-motion": "^2.9.4",
     "luxon": "^1.25.0",
     "next": "10.0.0",

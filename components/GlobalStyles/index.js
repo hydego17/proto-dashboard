@@ -12,6 +12,7 @@ const GlobalStyles = () => (
           -webkit-font-smoothing: antialiased;
           text-rendering: optimizeLegibility;
           backface-visibility: hidden;
+
           font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif !important;
         }
 

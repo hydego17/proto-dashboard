@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import {
   Stat,
   StatLabel,
@@ -26,7 +27,7 @@ export default function ProvinceStat({ prov }) {
   ];
 
   return (
-    <>
+    <StyledCard>
       {/* Statistic for Province */}
       <Wrap px={6} w="full">
         {data.map((item, index) => (
@@ -58,6 +59,12 @@ export default function ProvinceStat({ prov }) {
           </StatGroup>
         ))}
       </Wrap>
-    </>
+    </StyledCard>
   );
 }
+
+const StyledCard = styled.section`
+  svg {
+    color: #002ba0;
+  }
+`;
