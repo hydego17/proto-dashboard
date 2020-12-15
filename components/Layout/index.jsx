@@ -14,16 +14,19 @@ export default function Layout({ children }) {
 
   const router = useRouter();
 
+  // helper for active button state
+  const checkRouterPath = (path) => {
+    return router.pathname === path;
+  };
+
   const links = [
     {
       title: "Global Data",
       to: "/",
-      path: router.pathname === "/",
     },
     {
       title: "Indonesia",
       to: "/indonesia",
-      path: router.pathname === "/indonesia",
     },
   ];
 
@@ -42,12 +45,13 @@ export default function Layout({ children }) {
           <Flex pt={4}>
             {links.map((link, index) => (
               <Link key={index} href={link.to}>
-                <Button isActive={link.path} mr={2}>
+                <Button isActive={checkRouterPath(link.to)} mr={2}>
                   {link.title}
                 </Button>
               </Link>
             ))}
           </Flex>
+
           <Divider my={2} />
 
           {children}
